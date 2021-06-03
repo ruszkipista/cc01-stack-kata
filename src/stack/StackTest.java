@@ -72,4 +72,10 @@ public class StackTest {
         stack = Stack.Make(0);
         stack.push(1);
     }
+
+    @Test(expected = Stack.Underflow.class)
+    public void whenCreatingStackWithZeroCapacity_AnyPopShouldThrowUnderflow() throws Exception {
+        stack = Stack.Make(0);
+        stack.pop();
+    }
 }
