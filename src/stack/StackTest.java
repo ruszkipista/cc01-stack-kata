@@ -1,7 +1,7 @@
 package stack;
 
 import org.junit.Test;
-import org.junit.Assert;
+// import org.junit.Assert;
 import org.junit.Before;
 
 import static org.junit.Assert.assertEquals;
@@ -41,5 +41,10 @@ public class StackTest {
         stack.push(1);
         stack.push(2);
         stack.push(3);
+    }
+
+    @Test(expected = Stack.Underflow.class)
+    public void whenEmptyStackIsPopped_StackUnderflows() throws Exception {
+        stack.pop();
     }
 }

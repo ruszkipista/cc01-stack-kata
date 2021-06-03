@@ -1,5 +1,5 @@
 # Stack Kata
-Code along with Clean Code's Stack Kata in Java
+Code along with Clean Code's TDD demo of Stack Kata in Java
 
 Implement the abstract data type `Stack`. The stack is a first-in last-out data structure. Elements that are put on the stack are returned in reverse order.
 

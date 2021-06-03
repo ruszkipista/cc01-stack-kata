@@ -26,10 +26,15 @@ public class Stack {
     }
     
     public void pop() {
+        if (isEmpty())
+            throw new Underflow();
         size--;
     }
 
     public class Overflow extends RuntimeException{
+    }
+
+    public class Underflow extends RuntimeException{
     }
     
 }
