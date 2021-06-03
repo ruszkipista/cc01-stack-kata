@@ -13,7 +13,7 @@ public class StackTest {
 
     @Before
     public void setUp() throws Exception {
-        stack = new Stack();
+        stack = Stack.Make(2);
     }
     
     @Test
@@ -35,5 +35,11 @@ public class StackTest {
         stack.pop();
         assertTrue(stack.isEmpty());
     }
-    
+
+    @Test(expected = Stack.Overflow.class)
+    public void whenPushedPastLimit_StackOverflows() throws Exception {
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+    }
 }
