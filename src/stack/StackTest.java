@@ -63,7 +63,13 @@ public class StackTest {
     }
 
     @Test(expected = Stack.IllegalCapacity.class)
-    public void whenCreatingStackWithNegativeCapacity_ShouldTrowIllegalCapacity() throws Exception {
+    public void whenCreatingStackWithNegativeCapacity_ShouldThrowIllegalCapacity() throws Exception {
         stack = Stack.Make(-1);
+    }
+
+    @Test(expected = Stack.Overflow.class)
+    public void whenCreatingStackWithZeroCapacity_AnyPushShouldThrowOverflow() throws Exception {
+        stack = Stack.Make(0);
+        stack.push(1);
     }
 }
