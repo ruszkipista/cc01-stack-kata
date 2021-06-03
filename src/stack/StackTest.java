@@ -61,4 +61,9 @@ public class StackTest {
         assertEquals(2,stack.pop());
         assertEquals(1,stack.pop());
     }
+
+    @Test(expected = Stack.IllegalCapacity.class)
+    public void whenCreatingStackWithNegativeCapacity_ShouldTrowIllegalCapacity() throws Exception {
+        stack = Stack.Make(-1);
+    }
 }

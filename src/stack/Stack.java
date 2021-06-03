@@ -6,6 +6,8 @@ public class Stack {
     private int elements[];
     
     public static Stack Make(int capacity) {
+        if (capacity<0)
+            throw new IllegalCapacity();
         return new Stack(capacity);
     }
     private Stack(int capacity) {
@@ -25,21 +27,22 @@ public class Stack {
     public void push(int element) {
         if (size == capacity)
             throw new Overflow();
-        elements[size] = element;
-        size++;
+        this.elements[size++] = element;
     }
     
     public int pop() {
         if (isEmpty())
             throw new Underflow();
-        size--;
-        return elements[size];
+        return elements[--size];
     }
 
     public class Overflow extends RuntimeException{
     }
 
     public class Underflow extends RuntimeException{
+    }
+
+    public static class IllegalCapacity extends RuntimeException {
     }
     
 }
