@@ -47,4 +47,11 @@ public class StackTest {
     public void whenEmptyStackIsPopped_StackUnderflows() throws Exception {
         stack.pop();
     }
+
+    @Test
+    public void whenOneIsPushed_OneIsPopped() throws Exception {
+        stack.push(1);
+        assertEquals(1,stack.pop());
+    }
+
 }
