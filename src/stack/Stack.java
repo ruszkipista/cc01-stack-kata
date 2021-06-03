@@ -3,17 +3,19 @@ package stack;
 public class Stack {
     private int size;
     private int capacity;
-    private int element;
+    private int elements[];
     
     public static Stack Make(int capacity) {
         return new Stack(capacity);
     }
     private Stack(int capacity) {
         this.capacity = capacity;
+        elements = new int[capacity];
+        this.size = 0;
     }
     
     public boolean isEmpty() {
-        return (size==0);
+        return (size == 0);
     }
     
     public int getSize() {
@@ -23,7 +25,7 @@ public class Stack {
     public void push(int element) {
         if (size == capacity)
             throw new Overflow();
-        this.element = element;
+        elements[size] = element;
         size++;
     }
     
@@ -31,7 +33,7 @@ public class Stack {
         if (isEmpty())
             throw new Underflow();
         size--;
-        return element;
+        return elements[size];
     }
 
     public class Overflow extends RuntimeException{

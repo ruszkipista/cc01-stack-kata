@@ -54,4 +54,11 @@ public class StackTest {
         assertEquals(1,stack.pop());
     }
 
+    @Test
+    public void whenOneAndTwoArePushed_TwoAndOneArePopped() throws Exception {
+        stack.push(1);
+        stack.push(2);
+        assertEquals(2,stack.pop());
+        assertEquals(1,stack.pop());
+    }
 }
