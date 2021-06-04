@@ -103,4 +103,12 @@ public class StackTest {
         int indexOfThree = stack.find(3);
         assertEquals(1,indexOfThree);
     }
+
+    @Test
+    public void givenStackPushedWithThreeFour_FindIndexOfFour() throws Exception {
+        stack.push(3);
+        stack.push(4);
+        int indexOfThree = stack.find(4);
+        assertEquals(0,indexOfThree);
+    }
 }
