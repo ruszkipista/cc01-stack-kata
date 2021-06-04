@@ -78,4 +78,10 @@ public class StackTest {
         stack = Stack.Make(0);
         stack.pop();
     }
+
+    @Test
+    public void whenOneIsPushed_OneIsOnTop() throws Exception {
+        stack.push(1);
+        assertEquals(1,stack.top());
+    }
 }

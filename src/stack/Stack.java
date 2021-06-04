@@ -36,6 +36,10 @@ public class Stack {
         return elements[--size];
     }
 
+    public int top() {
+        return elements[size-1];
+    }
+
     public class Overflow extends RuntimeException{
     }
 
@@ -44,5 +48,5 @@ public class Stack {
 
     public static class IllegalCapacity extends RuntimeException {
     }
-    
+
 }
