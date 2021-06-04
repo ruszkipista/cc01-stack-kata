@@ -95,4 +95,12 @@ public class StackTest {
         stack = Stack.Make(0);
         stack.top();
     }
+
+    @Test
+    public void givenStackPushedWithThreeFour_FindIndexOfThree() throws Exception {
+        stack.push(3);
+        stack.push(4);
+        int indexOfThree = stack.find(3);
+        assertEquals(1,indexOfThree);
+    }
 }
