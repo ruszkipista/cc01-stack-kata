@@ -84,4 +84,9 @@ public class StackTest {
         stack.push(1);
         assertEquals(1,stack.top());
     }
+
+    @Test(expected = Stack.Empty.class)
+    public void whenStackIsEmpty_TopThrowsEmpty() throws Exception {
+        stack.top();
+    }
 }

@@ -37,6 +37,8 @@ public class Stack {
     }
 
     public int top() {
+        if (isEmpty())
+            throw new Empty();
         return elements[size-1];
     }
 
@@ -47,6 +49,9 @@ public class Stack {
     }
 
     public static class IllegalCapacity extends RuntimeException {
+    }
+
+    public class Empty extends RuntimeException{
     }
 
 }
