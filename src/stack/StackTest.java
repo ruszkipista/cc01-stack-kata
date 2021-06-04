@@ -89,4 +89,10 @@ public class StackTest {
     public void whenStackIsEmpty_TopThrowsEmpty() throws Exception {
         stack.top();
     }
+
+    @Test(expected = Stack.Empty.class)
+    public void withZeroCapacityStack_TopThrowsEmpty() throws Exception {
+        stack = Stack.Make(0);
+        stack.top();
+    }
 }
