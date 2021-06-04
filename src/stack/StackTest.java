@@ -112,4 +112,10 @@ public class StackTest {
         stack.push(4);
         assertNull(stack.find(5));
     }
+
+    @Test
+    public void withZeroCapacityStack_FindOfFiveReturnsNull() throws Exception {
+        stack = Stack.Make(0);
+        assertNull(stack.find(5));
+    }
 }
