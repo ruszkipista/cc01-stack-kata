@@ -1,11 +1,11 @@
 package stack;
 
 import org.junit.Test;
-// import org.junit.Assert;
 import org.junit.Before;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public class StackTest {
@@ -97,18 +97,19 @@ public class StackTest {
     }
 
     @Test
-    public void givenStackPushedWithThreeFour_FindIndexOfThree() throws Exception {
+    public void givenStackPushedWithThreeFour_FindOfThreeAndFourShouldReturnIndexFromTop() throws Exception {
         stack.push(3);
         stack.push(4);
         int indexOfThree = stack.find(3);
         assertEquals(1,indexOfThree);
+        int indexOfFour = stack.find(4);
+        assertEquals(0,indexOfFour);
     }
 
     @Test
-    public void givenStackPushedWithThreeFour_FindIndexOfFour() throws Exception {
+    public void givenStackPushedWithThreeFour_FindOfFiveShoudReturnNull() throws Exception {
         stack.push(3);
         stack.push(4);
-        int indexOfThree = stack.find(4);
-        assertEquals(0,indexOfThree);
+        assertNull(stack.find(5));
     }
 }

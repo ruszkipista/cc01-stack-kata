@@ -55,10 +55,13 @@ public class Stack {
     }
 
     public Integer find(int element) {
-        for (int i=size-1; i>=0; i-- )
-            if (elements[i]==element)
-                return size-i-1;
-        return null;
+        Integer indexOfElementFromTop = null;
+        for (int i=size-1; i>=0; i--)
+            if (elements[i]==element) {
+                indexOfElementFromTop = size-i-1;
+                break;
+            }
+        return indexOfElementFromTop;
     }
 
 }
